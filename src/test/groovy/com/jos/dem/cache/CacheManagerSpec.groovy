@@ -23,7 +23,17 @@ class CacheManagerSpec extends Specification {
       cacheManager.put("josdem","developer")
     and:'We remove that entity'
       cacheManager.remove('josdem')
-    then:'We expect is not empty'
+    then:'We expect is empty'
+      cacheManager.isEmpty() == true
+  }
+
+  void "should invalidate a cache"(){
+    when:'We add a couple entities'
+      cacheManager.put("josdem","developer")
+      cacheManager.put("tgrip","developer")
+    and:'We invalidate cache'
+      cacheManager.invalidate()
+    then:'We expect is empty'
       cacheManager.isEmpty() == true
   }
 

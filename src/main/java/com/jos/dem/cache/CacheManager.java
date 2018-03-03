@@ -15,6 +15,10 @@ public class CacheManager {
     cache.remove(key);
   }
 
+  public void invalidate(){
+
+  }
+
   public Boolean isEmpty(){
     return cache.isEmpty();
   }
