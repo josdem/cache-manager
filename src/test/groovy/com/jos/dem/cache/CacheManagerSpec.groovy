@@ -18,4 +18,13 @@ class CacheManagerSpec extends Specification {
       cacheManager.isEmpty() == false
   }
 
+  void "should remove an entity from cache"(){
+    when:'We add a new entity'
+      cacheManager.put("josdem","developer")
+    and:'We remove that entity'
+      cacheManager.remove('josdem')
+    then:'We expect is not empty'
+      cacheManager.isEmpty() == true
+  }
+
 }

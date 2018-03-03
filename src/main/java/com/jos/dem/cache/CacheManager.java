@@ -11,6 +11,9 @@ public class CacheManager {
     cache.put(key, value);
   }
 
+  public void remove(String key){
+  }
+
   public Boolean isEmpty(){
     return cache.isEmpty();
   }
