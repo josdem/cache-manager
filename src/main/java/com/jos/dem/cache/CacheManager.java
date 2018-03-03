@@ -1,9 +1,18 @@
 package com.jos.dem.cache;
 
+import java.util.Map;
+import java.util.HashMap;
+
 public class CacheManager {
 
-  Boolean isEmpty(){
-    return false;
+  private Map<String, String> cache = new HashMap<String, String>();
+
+  public void put(String key, String value){
+    cache.put(key, value);
+  }
+
+  public Boolean isEmpty(){
+    return cache.isEmpty();
   }
 
 }
