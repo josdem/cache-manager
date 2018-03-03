@@ -16,7 +16,7 @@ public class CacheManager {
   }
 
   public void invalidate(){
-
+    cache.clear();
   }
 
   public Boolean isEmpty(){
