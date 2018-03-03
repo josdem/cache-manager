@@ -3,7 +3,7 @@ Cache Manager
 
 This project implements a custom cache manager
 
-#### Acceptance criteria
+### Acceptance criteria
 
 **First Milestone**
 
@@ -12,7 +12,7 @@ This project implements a custom cache manager
 3. You can call `invalidate()` to remove all elements from cache
 
 
-#### To run the project
+### To run the project
 
 ```bash
 gradle test
