@@ -11,6 +11,10 @@ public class CacheManager {
     cache.put(key, value);
   }
 
+  public String get(String key){
+    return "";
+  }
+
   public void remove(String key){
     cache.remove(key);
   }
