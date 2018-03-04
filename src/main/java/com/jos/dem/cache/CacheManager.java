@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public class CacheManager {
 
+  private static final Integer MAX_CAPACITY = 5;
   private ValidationStrategy strategy;
   private Map<String, String> cache = new HashMap<String, String>();
 
@@ -30,6 +31,10 @@ public class CacheManager {
 
   public Boolean isEmpty(){
     return cache.isEmpty();
+  }
+
+  public Boolean isFull(){
+    return cache.size() >= MAX_CAPACITY;
   }
 
 }
