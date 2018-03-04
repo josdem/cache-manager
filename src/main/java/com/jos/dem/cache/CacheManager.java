@@ -17,7 +17,7 @@ public class CacheManager {
   }
 
   public String get(String key){
-    return cache.get(key);
+    return strategy.isValid(key) ? cache.get(key) : null;
   }
 
   public void remove(String key){

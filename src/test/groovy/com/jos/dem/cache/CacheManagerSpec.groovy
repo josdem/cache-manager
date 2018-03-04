@@ -6,6 +6,13 @@ class CacheManagerSpec extends Specification {
 
   CacheManager cacheManager = new CacheManager()
 
+  ValidationStrategy strategy = Mock(ValidationStrategy)
+
+  def setup(){
+    strategy.isValid(_ as String) >> true
+    cacheManager.setStrategy(strategy)
+  }
+
   void "should know cache manager is empty"(){
     expect:'Is empty'
       cacheManager.isEmpty() == true

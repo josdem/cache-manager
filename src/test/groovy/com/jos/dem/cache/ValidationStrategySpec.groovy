@@ -16,8 +16,8 @@ class ValidationStrategySpec extends Specification {
       String key = 'josdem'
     when:'We store a value'
       cacheManager.put(key, 'developer')
-    then:'We expect to get value'
       strategy.isValid(key) >> false
+    then:'We expect to get value'
       cacheManager.get(key) == null
   }
 }
