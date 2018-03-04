@@ -12,6 +12,9 @@ This project implements a custom cache manager
 3. You can remove with `remove(key)` to your cache manager
 4. You can call `invalidate()` to remove all elements from cache
 
+**Second Milestone**
+
+1. Cache has a validation rule, this validation could be time expiration, key or value format, priority, etc.2. Implement validation support to the cache manager
 
 ### To run the project
 

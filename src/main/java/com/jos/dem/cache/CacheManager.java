@@ -5,7 +5,12 @@ import java.util.HashMap;
 
 public class CacheManager {
 
+  private ValidationStrategy strategy;
   private Map<String, String> cache = new HashMap<String, String>();
+
+  public void setStrategy(ValidationStrategy strategy){
+    this.strategy = strategy;
+  }
 
   public void put(String key, String value){
     cache.put(key, value);
