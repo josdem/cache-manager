@@ -8,8 +8,9 @@ This project implements a custom cache manager
 **First Milestone**
 
 1. You can add with `put(key, value)` to your cache manager
-2. You can remove with `remove(key)` to your cache manager
-3. You can call `invalidate()` to remove all elements from cache
+2. You can get an entity from cache manager with `get(key)`
+3. You can remove with `remove(key)` to your cache manager
+4. You can call `invalidate()` to remove all elements from cache
 
 
 ### To run the project
