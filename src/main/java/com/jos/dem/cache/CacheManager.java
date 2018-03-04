@@ -12,7 +12,7 @@ public class CacheManager {
   }
 
   public String get(String key){
-    return "";
+    return cache.get(key);
   }
 
   public void remove(String key){
