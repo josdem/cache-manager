@@ -19,12 +19,10 @@ public class CacheManager {
   }
 
   public void put(String key, String value){
-    System.out.println("------");
     if(isFull()){
       policy.garbageCollect(cache);
     }
     cache.put(key, value);
-    cache.forEach((k,v) -> System.out.println(k + ":" + v));
   }
 
   public String get(String key){
