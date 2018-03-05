@@ -20,7 +20,7 @@ This project implements a custom cache manager
 **Third Milestone**
 
 1. Cache has 5 max elements can store
-2. Cache is using [FIFO Queue](https://en.m.wikipedia.org/wiki/FIFO_(computing_and_electronics)) replacement policies, therefore cache evicts the first block accessed first without any regard to how often or how many times it was accessed before.
+2. Cache is using key alphabetical replacement policy, therefore cache removes the first block accessed first without any regard to how often or how many times it was accessed before.
 
 ### To run the project
 
