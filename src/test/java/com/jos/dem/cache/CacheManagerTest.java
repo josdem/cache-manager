@@ -1,5 +1,6 @@
 package com.jos.dem.cache;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -21,6 +22,13 @@ class CacheManagerTest {
   void shouldAddNewEntityToCache() {
     cacheManager.put("josdem", "developer");
     assertFalse(cacheManager.isEmpty(), "should not be empty");
+  }
+
+  @Test
+  @DisplayName("should get an entity from cache")
+  void shouldGetEntityFromCache(){
+    cacheManager.put("josdem", "developer");
+    assertEquals("developer", cacheManager.get("josdem"));
   }
 
 }
