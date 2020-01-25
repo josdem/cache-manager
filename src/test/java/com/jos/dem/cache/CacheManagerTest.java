@@ -39,4 +39,13 @@ class CacheManagerTest {
     assertTrue(cacheManager.isEmpty(), "should be empty");
   }
 
+  @Test
+  @DisplayName("should invalidate a cache")
+  void shouldInvalidateCache() {
+    cacheManager.put("josdem", "developer");
+    cacheManager.put("tgrip", "developer");
+    cacheManager.invalidate();
+    assertTrue(cacheManager.isEmpty(), "should be empty");
+  }
+
 }
