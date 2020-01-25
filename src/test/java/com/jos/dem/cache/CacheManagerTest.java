@@ -28,7 +28,15 @@ class CacheManagerTest {
   @DisplayName("should get an entity from cache")
   void shouldGetEntityFromCache(){
     cacheManager.put("josdem", "developer");
-    assertEquals("developer", cacheManager.get("josdem"));
+    assertEquals("developer", cacheManager.get("josdem"), "should be developer");
+  }
+
+  @Test
+  @DisplayName("should remove an entity from cache")
+  void shouldRemoveEntityFromCache() {
+    cacheManager.put("josdem", "developer");
+    cacheManager.remove("josdem");
+    assertTrue(cacheManager.isEmpty(), "should be empty");
   }
 
 }
