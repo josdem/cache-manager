@@ -4,12 +4,29 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.anyString;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 class CacheManagerTest {
 
+  @InjectMocks
   private CacheManager cacheManager = new CacheManager();
+  @Mock
+  private ValidationStrategy validationStrategy;
+
+  @BeforeEach
+  void setup(){
+    MockitoAnnotations.initMocks(this);
+    when(validationStrategy.isValid(anyString())).thenReturn(true);
+    cacheManager.setStrategy(validationStrategy);
+  }
 
   @Test
   @DisplayName("should know cache manager is empty")

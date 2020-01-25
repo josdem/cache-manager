@@ -10,6 +10,7 @@ repositories {
 dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
     testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+    testImplementation "org.mockito:mockito-junit-jupiter:3.2.4"
 }
 
 test {
