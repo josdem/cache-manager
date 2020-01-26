@@ -2,7 +2,6 @@ package com.jos.dem.cache;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
@@ -37,7 +36,6 @@ class ReplacementPolicyTest {
     cacheManager.put("emoranchel","developer");
     cacheManager.put("jeduan","developer");
     cacheManager.put("siedrix","developer");
-    assertTrue(cacheManager.isFull(), "should be full");
     assertNull(cacheManager.get("tgrip"), "should be null");
     assertEquals("developer", cacheManager.get("siedrix"), "should get siedrix");
   }
