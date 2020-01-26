@@ -10,7 +10,7 @@ public class CacheManager {
   private ReplacementPolicy policy;
   private Map<String, String> cache = new TreeMap<String, String>();
 
-  public void setStrategy(ValidationStrategy strategy){
+  public void setStrategy(ValidationStrategy strategy) {
     this.strategy = strategy;
   }
 
@@ -22,22 +22,23 @@ public class CacheManager {
     if(isFull()){
       policy.garbageCollect(cache);
     }
+
     cache.put(key, value);
   }
 
-  public String get(String key){
+  public String get(String key) {
     return strategy.isValid(key) ? cache.get(key) : null;
   }
 
-  public void remove(String key){
+  public void remove(String key) {
     cache.remove(key);
   }
 
-  public void invalidate(){
+  public void invalidate() {
     cache.clear();
   }
 
-  public Boolean isEmpty(){
+  public Boolean isEmpty() {
     return cache.isEmpty();
   }
 
