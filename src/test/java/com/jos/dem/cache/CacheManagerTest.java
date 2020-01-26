@@ -65,4 +65,15 @@ class CacheManagerTest {
     assertTrue(cacheManager.isEmpty(), "should be empty");
   }
 
+  @Test
+  @DisplayName("should be full")
+  void shouldBeFull(){
+    cacheManager.put("josdem","developer");
+    cacheManager.put("tgrip","developer");
+    cacheManager.put("skuarch","developer");
+    cacheManager.put("emoranchel","developer");
+    cacheManager.put("jeduan","developer");
+    assertTrue(cacheManager.isFull(), "should be full");
+  }
+
 }
