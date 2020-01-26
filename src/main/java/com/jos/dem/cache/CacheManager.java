@@ -13,11 +13,13 @@ public class CacheManager {
   }
 
   public void put(String key, String value) {
-    cache.put(key, value);
+    if(strategy.isValid(key)){
+      cache.put(key, value);
+    }
   }
 
   public String get(String key) {
-    return strategy.isValid(key) ? cache.get(key) : null;
+    return cache.get(key);
   }
 
   public void remove(String key) {

@@ -1,6 +1,6 @@
 package com.jos.dem.cache;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +29,7 @@ class ValidationStrategyTest {
     String key = "josdem";
     when(validationStrategy.isValid(key)).thenReturn(false);
     cacheManager.put("josdem", "developer");
-    assertNull(cacheManager.get("josdem"), "should not be valid");
+    assertTrue(cacheManager.isEmpty(), "should be empty");
   }
 
 }
