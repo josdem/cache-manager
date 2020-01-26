@@ -23,11 +23,15 @@ public class CacheManager {
       policy.garbageCollect(cache);
     }
 
+    if(!strategy.isValid(key)){
+      throw new RuntimeException("Not Valid key");
+    }
+    
     cache.put(key, value);
   }
 
   public String get(String key) {
-    return strategy.isValid(key) ? cache.get(key) : null;
+    return cache.get(key);
   }
 
   public void remove(String key) {

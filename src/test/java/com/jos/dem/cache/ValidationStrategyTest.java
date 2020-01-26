@@ -1,6 +1,6 @@
 package com.jos.dem.cache;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -28,8 +28,7 @@ class ValidationStrategyTest {
   void shouldNotGetValueSinceIsNotValidKey(){
     String key = "josdem";
     when(validationStrategy.isValid(key)).thenReturn(false);
-    cacheManager.put("josdem", "developer");
-    assertNull(cacheManager.get("josdem"), "should not be valid");
+    assertThrows(RuntimeException.class, () -> cacheManager.put("josdem", "developer"), "should be an exception");
   }
 
 }
